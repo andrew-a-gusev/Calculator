@@ -2,7 +2,7 @@ import org.junit.Test;
 
 public class Calculator {
 
-    public int value(String input) {
+    public double value(String input) {
         Operator operator= getOperator(input);
         Operands operands = getOperands(input);
         return operator.apply(operands);
@@ -11,8 +11,8 @@ public class Calculator {
     private Operands getOperands(String input) {
         String[] substring = input.split("\\+|-|\\*|/");
         Operands Operands = new Operands();
-        Operands.var1 = Integer.valueOf(substring[0]);
-        Operands.var2 = Integer.valueOf(substring[1]);
+        Operands.var1 = Double.valueOf(substring[0]);
+        Operands.var2 = Double.valueOf(substring[1]);
         return Operands;
     }
 

@@ -1,4 +1,4 @@
 
 public interface Operator {
-    int apply(Operands operands);
+    double apply(Operands operands);
 }
