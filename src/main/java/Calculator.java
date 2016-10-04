@@ -17,34 +17,15 @@ public class Calculator {
     }
 
     private Operator getOperator(String input) {
-        String str = input;
-        for (int i=0; i < str.length(); i++) {
-            /**
-             * Major:
-             *   1. Very good in general
-             *   2. Please, think of how to add new operator WITHOUT modifing a single line of getOperator code
-             * Minor:
-             * it is an overcomplicaition 
-             *  switch(input.chatAt(i)) {... } 
-             *  OR
-             *  if ('+' ...) {} else if ('-'...) ... 
-             *  would be enough
-             */
-            if (('+' == input.charAt(i)) | ('-' == input.charAt(i)) |
-                    (input.charAt(i) == '*') | (input.charAt(i) == '/')) {
-                char s = input.charAt(i);
-                switch (s) {
-                    case '+':
-                        return new SumOperator();
-                    case '-':
-                        return new DiffOperator();
-                    case '*':
-                        return new MulOperator();
-                    case '/':
-                        return new DivOperarot();
+        /**
+         * Norm?
+         */
+        for (int i=0; i < input.length(); i++) {
+            if ('+' == input.charAt(i)) return new SumOperator();
+            else if ('-' == input.charAt(i)) return new DiffOperator();
+            else if ('*' == input.charAt(i)) return new MulOperator();
+            else if ('/' == input.charAt(i)) return new DivOperarot();
                 }
-            }
-        }
         return null;
     }
 
