@@ -19,6 +19,7 @@ public class Calculator {
     private Operator getOperator(String input) {
         /**
          * Norm?
+         * Yes.
          */
         for (int i=0; i < input.length(); i++) {
             if ('+' == input.charAt(i)) return new SumOperator();
